@@ -1,0 +1,30 @@
+{% extends 'incendie_foret/base.html' %}
+
+{% block content %}
+    <h2 class="white-text">Nouvelle forêt</h2>
+    <form method="POST" class="inline-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="blue-text" for="nom">Nom :</label>
+            {{ form.nom }}
+        </div>
+        <div class="form-group">
+            <label class="blue-text" for="superficie">Superficie :</label>
+            {{ form.superficie }}
+        </div>
+        <div class="form-group">
+            <label class="blue-text" for="localisation">Localisation :</label>
+            {{ form.localisation }}
+        </div>
+        <div class="form-group">
+            <label class="blue-text" for="type">Type :</label>
+            {{ form.type }}
+        </div>
+        <div class="form-group">
+            <label class="blue-text" for="densite">Densité :</label>
+            {{ form.densite }}
+        </div>
+        <button class="btn btn-primary" type="submit">Suivant</button>
+    </form>
+{% endblock %}
+

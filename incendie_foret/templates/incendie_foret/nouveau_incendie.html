@@ -1,0 +1,41 @@
+{% extends 'incendie_foret/base.html' %}
+
+{% block content %}
+    <h2 class="white-text">Nouvel incendie</h2>
+    <form method="POST" class="inline-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="blue-text" for="annee_incendie">Année de l'incendie :</label>
+            {{ form.annee_incendie }}
+        </div>
+        <div class="form-group">
+            <label class="blue-text" for="numero">Numéro de l'incendie :</label>
+            {{ form.numero }}
+        </div>
+        <div class="form-group">
+            <label class="blue-text" for="date_eclosion">Date d'éclosion :</label>
+            {{ form.date_eclosion }}
+        </div>
+        <div class="form-group">
+            <label class="blue-text" for="foret_domaniale">Forêt domaniale :</label>
+            {{ form.foret_domaniale }}
+        </div>
+        <div class="form-group">
+            <label class="blue-text" for="commune_rurale">Commune rurale :</label>
+            {{ form.commune_rurale }}
+        </div>
+        <div class="form-group">
+            <label class="blue-text" for="ccdrf">CCDRF :</label>
+            {{ form.ccdrf }}
+        </div>
+        <div class="form-group">
+            <label class="blue-text" for="superficie_incendiee">Superficie incendiée :</label>
+            {{ form.superficie_incendiee }}
+        </div>
+        <div class="form-group">
+            <label class="blue-text" for="id_foret">Forêt :</label>
+            {{ form.id_foret }}
+        </div>
+        <button class="btn btn-primary" type="submit">Enregistrer</button>
+    </form>
+{% endblock %}

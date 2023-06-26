@@ -1,0 +1,182 @@
+/* Styles spécifiques à l'application Incendie de forêt */
+
+.page-header {
+    background-color: #333;
+    padding: 1px;
+    color: #fff;
+    text-align: center;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.page-header h1 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+body {
+    background-image: url("./image/photo_incendie.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding-top: 150px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1px;
+}
+
+.row {
+    margin-bottom: 100px;
+}
+
+.col {
+    padding: 0 60px;
+}
+
+a {
+    color: #1eff00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.top_menu {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.top_menu a {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 30px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.top_menu a:hover {
+    background-color: #555;
+}
+
+.article {
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.article time {
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
+}
+
+.article h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.article p {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+    color: #fdfdfd;
+}
+
+.article p:last-child {
+    margin-bottom: 0;
+}
+
+.article .annee {
+    color: #e30000;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.date_eclosion,
+.label {
+    color: #ffffff;
+    background-color: rgba(79, 129, 255, 0.5);
+    font-size: 16px;
+}
+
+.info {
+    color: #00fff2;
+}
+
+.blue-text {
+    color: #82ff44;
+}
+
+.red-text {
+    color: #ffff00;
+}
+
+.white-text {
+    color: #fff;
+}
+
+.blue-text {
+    color: #00c3ff;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.results-container {
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 110px; /* Ajout de cette ligne */
+}
+.resultats-liste {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resultats-item {
+    margin-bottom: 20px;
+    color: #48f000;
+}
+
+.resultats-titre {
+    font-weight: bold;
+}
+
+.resultats-texte {
+    color: #d3f800;
+}

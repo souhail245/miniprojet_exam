@@ -1,0 +1,31 @@
+{% extends 'incendie_foret/base.html' %}
+
+{% block content %}
+<article class="incendie">
+    <h2><span class="red-text">Informations sur l'incendie</span></h2>
+    <ul>
+        <li><strong><span class="blue-text">ID :</span></strong> <span class="info">{{ incendie.id_incendie }}</span></li>
+        <li><strong><span class="blue-text">Année de l'incendie :</span></strong> <span class="info">{{ incendie.annee_incendie }}</span></li>
+        <li><strong><span class="blue-text">Numéro de l'incendie :</span></strong> <span class="info">{{ incendie.numero }}</span></li>
+        <li><strong><span class="blue-text">Date d'éclosion :</span></strong> <span class="info">{{ incendie.date_eclosion }}</span></li>
+        <li><strong><span class="blue-text">Forêt domaniale :</span></strong> <span class="info">{{ incendie.foret_domaniale }}</span></li>
+        <li><strong><span class="blue-text">Commune rurale :</span></strong> <span class="info">{{ incendie.commune_rurale }}</span></li>
+        <li><strong><span class="blue-text">CCDRF :</span></strong> <span class="info">{{ incendie.ccdrf }}</span></li>
+        <li><strong><span class="blue-text">Superficie incendiée :</span></strong> <span class="info">{{ incendie.superficie_incendiee }} ha</span></li>
+        <li><strong><span class="blue-text">Forêt :</span></strong> <span class="info">{{ incendie.id_foret }}</span></li>
+    </ul>
+</article>
+
+<article class="foret">
+    <h2><span class="red-text">Informations sur la forêt</span></h2>
+    <ul>
+        <li><strong><span class="blue-text">ID :</span></strong> <span class="info">{{ incendie.id_foret.id_foret }}</span></li>
+        <li><strong><span class="blue-text">Nom de la forêt :</span></strong> <span class="info">{{ incendie.id_foret.nom }}</span></li>
+        <li><strong><span class="blue-text">Superficie de la forêt :</span></strong> <span class="info">{{ incendie.id_foret.superficie }} ha</span></li>
+        <li><strong><span class="blue-text">Localisation de la forêt :</span></strong> <span class="info">{{ incendie.id_foret.localisation }}</span></li>
+        <li><strong><span class="blue-text">Type de la forêt :</span></strong> <span class="info">{{ incendie.id_foret.type }}</span></li>
+        <li><strong><span class="blue-text">Densité de la forêt :</span></strong> <span class="info">{{ incendie.id_foret.densite }}</span></li>
+    </ul>
+</article>
+{% endblock %}
+

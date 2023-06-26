@@ -1,0 +1,18 @@
+{% extends 'incendie_foret/base.html' %}
+
+{% block content %}
+  {% for incendie in incendies %}
+    <article class="incendie">
+      <h2>
+        <a href="{% url 'incendie_foret_detail' pk=incendie.pk %}">
+          <span class="foret_domaniale">{{ incendie.foret_domaniale }}</span> - <span class="annee">{{ incendie.annee_incendie }}</span>
+        </a><br>
+        <span class="label">date d'éclosion : {{ incendie.date_eclosion|date:"d/m/Y" }}</span> <br>
+        <span class="label">numero de l'incendie : {{ incendie.numero }} </span><br>
+        <span class="label">superficie incendiée : {{ incendie.superficie_incendiee }} ha </span><br>
+      </h2>
+      <!-- Autres informations sur l'incendie -->
+    </article>
+  {% endfor %}
+{% endblock %}
+
