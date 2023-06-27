@@ -1,18 +1,53 @@
 {% extends 'incendie_foret/base.html' %}
 
 {% block content %}
+<style>
+  table{
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    color: rgb(252, 255, 49);
+  }
+  th{
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: rgb(0,51,255);
+  }
+</style>
+<table>
+  <thead>
+    <tr>
+       <th> Foret domaniale</th>
+       <th>Année</th>
+       <th>Date d'éclosion</th> 
+       <th>Numéro</th>
+       <th>Superficie incendiée (ha)</th>
+       <th> Actions </th>
+    </tr>
+  </thead>
+  <tbody
   {% for incendie in incendies %}
-    <article class="incendie">
-      <h2>
-        <a href="{% url 'incendie_foret_detail' pk=incendie.pk %}">
-          <span class="foret_domaniale">{{ incendie.foret_domaniale }}</span> - <span class="annee">{{ incendie.annee_incendie }}</span>
-        </a><br>
-        <span class="label">date d'éclosion : {{ incendie.date_eclosion|date:"d/m/Y" }}</span> <br>
-        <span class="label">numero de l'incendie : {{ incendie.numero }} </span><br>
-        <span class="label">superficie incendiée : {{ incendie.superficie_incendiee }} ha </span><br>
-      </h2>
-      <!-- Autres informations sur l'incendie -->
-    </article>
+  <tr>
+    <td><a href="{% url 'incendie_foret_detail' pk=incendie.pk %}">{{incendie.foret_domaniale}}</a></td>
+    <td>{{incendie.annee_incendie }}</td>
+    <td>{{ incendie.date_eclosion|date:"d/m/Y" }}</td>
+    <td>{{ incendie.numero }}</td>
+    <td>{{ incendie.superficie_incendiee }}</td>
+    <td>
+      <a href="{% url 'modifier_incendie' pk=incendie.pk %}" class="btn btn-modifier"><i class="fas fa-edit"></i></a>
+      <a href="{% url 'supprimer_incendie' pk=incendie.pk %}" class="btn btn-supprimer" onclick="return confirmDelete();"><i class="fas fa-trash-alt"></i></a>                                   
+    </td>
+  </tr>
   {% endfor %}
+  </tbody>
+</table>
+<script>
+  function confirmDelete(){
+    return confirm("Etes-vous sur de vouloir supprimer cet incndie ?");
+  }
+</script>
 {% endblock %}
 

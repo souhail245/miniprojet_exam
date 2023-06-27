@@ -3,13 +3,15 @@
 {% block content %}
     <div class="text-right">
         
-        <h2 >Résultats de la recherche</h2>
+        <h2><span class= "recherche">Résultats de la recherche</span></h2>
         <ul class="resultats-liste">
             {% for foret in resultats %}
                 <li class="resultats-item">
                     <strong class="resultats-titre">Nom de la forêt:</strong> <span class="resultats-texte">{{ foret.nom }}</span><br>
                     <strong class="resultats-titre">Superficie:</strong> <span class="resultats-texte">{{ foret.superficie }} ha</span><br>
                     <strong class="resultats-titre">Localisation touchée:</strong> <span class="resultats-texte">{{ foret.localisation }}</span><br>
+                    <strong class="resultats-titre">Type:</strong> <span class="resultats-texte">{{ foret.type }}</span><br>
+                    <strong class="resultats-titre">Densité:</strong> <span class="resultats-texte">{{ foret.densite }}</span><br>
                 </li>
             {% empty %}
                 <li class="resultats-item">Aucun résultat trouvé.</li>

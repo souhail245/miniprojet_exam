@@ -8,4 +8,6 @@ urlpatterns = [
     path('nouvelle-foret/', views.nouvelle_foret, name='nouvelle_foret'),
     path('nouveau-incendie/', views.nouveau_incendie, name='nouveau_incendie'),
     path('recherche-foret/', views.recherche_foret, name='recherche_foret'),
+    path('incendie/<int:pk>/supprimer/', views.supprimer_incendie, name='supprimer_incendie'),
+    path('incendie/<int:pk>/modifier/', views.modifier_incendie, name='modifier_incendie')
 ]

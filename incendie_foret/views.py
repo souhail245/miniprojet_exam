@@ -44,5 +44,21 @@ def recherche_foret(request):
     }
     return render(request, 'incendie_foret/recherche_foret.html', context)
 
-    
+def supprimer_incendie(request,pk):
+    incendie=get_object_or_404(Incendie, pk=pk)
+    incendie.delete()
+    return redirect('my_template')
 
+def modifier_incendie(request,pk):
+    incendie=get_object_or_404(Incendie, pk=pk)
+    if request.method =='POST':
+        form = IncendieForm(request.POST, instance=incendie)
+        if form.is_valid():
+            form.save()
+            return redirect('incendie_foret_detail',pk=pk)
+    else:
+        form= IncendieForm(instance=incendie)
+    context={'form':form}
+    return render(request, 'incendie_foret/nouveau_incendie.html',context)
+
+    
